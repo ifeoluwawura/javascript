@@ -1,12 +1,15 @@
-function convert(minute) {
-    let calculate = minute * 60;
-    return calculate;
+let convertTo = document.getElementById('convertTo');
+let userInput = document.getElementById('userInput');
+message = document.getElementById('message');
 
-}
+convertTo.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-let input = prompt("Enter in minute to be converted to seconds")
+    let minutes = Number(userInput.value);
+    let seconds = userInput * 60;
 
-let solution = convert(Number(input));
+    message.innerText =  minutes + "minutes is" + seconds + "seconds";
+})
 
-console.log(solution);
-document.getElementById('solution').innerHTML = `${input} minute is equals to ${solution} seconds`
+
+  
