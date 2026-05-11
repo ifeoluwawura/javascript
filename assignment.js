@@ -1,14 +1,24 @@
 let convertTo = document.getElementById('convertTo');
-let userInput = document.getElementById('userInput');
-message = document.getElementById('message');
+
 
 convertTo.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let minutes = Number(userInput.value);
-    let seconds = userInput * 60;
+    let userInput = document.getElementById('userInput');
+    let message = document.getElementById('message');
 
-    message.innerText =  minutes + "minutes is" + seconds + "seconds";
+    let minutes = Number(userInput.value);
+
+    if (Number.isInteger(minutes)){
+        let seconds = minutes * 60;
+        message.innerText = minutes + " minutes is " + seconds + " seconds";
+        message.style.color = "green";
+    } else{
+        message.innerText = "Please enter a whole number (integer).";
+        message.style.color = "red";
+    }
+    
+
 })
 
 
