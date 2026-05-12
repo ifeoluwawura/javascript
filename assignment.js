@@ -9,7 +9,11 @@ convertTo.addEventListener("submit", function(e) {
 
     let minutes = Number(userInput.value);
 
-    if (Number.isInteger(minutes)){
+    if (minutes === ""){
+        message.innerHTML = "Enter a number in minutes to be converted to seconds"
+        message.style.color = "black"
+    }    
+   else if (Number.isInteger(minutes)){
         let seconds = minutes * 60;
         message.innerText = minutes + " minutes is " + seconds + " seconds";
         message.style.color = "green";
